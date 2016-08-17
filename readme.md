@@ -1,2 +1,2 @@
-# Codewars-Sol-Python
+# Codewars-Solu-Python
 Python Solutions on Codewars
