@@ -343,8 +343,8 @@ class Solution():
                 for off in offsets:
                     tmp = d[(7, off)]
                     start = (pos + prime) if off == 7 else (
-                                                               prime * (
-                                                                   const * (pos + 1 if tmp < 7 else 0) + tmp)) // const
+                        prime * (
+                            const * (pos + 1 if tmp < 7 else 0) + tmp)) // const
                     del_mult(tmptk[off], start, prime)
             # 30k + 11
             if tk11[pos]:
@@ -426,14 +426,22 @@ class Solution():
         # now complete for every other possible prime
         while pos < len(tk1):
             cpos = const * pos
-            if tk1[pos]: p.append(cpos + 1)
-            if tk7[pos]: p.append(cpos + 7)
-            if tk11[pos]: p.append(cpos + 11)
-            if tk13[pos]: p.append(cpos + 13)
-            if tk17[pos]: p.append(cpos + 17)
-            if tk19[pos]: p.append(cpos + 19)
-            if tk23[pos]: p.append(cpos + 23)
-            if tk29[pos]: p.append(cpos + 29)
+            if tk1[pos]:
+                p.append(cpos + 1)
+            if tk7[pos]:
+                p.append(cpos + 7)
+            if tk11[pos]:
+                p.append(cpos + 11)
+            if tk13[pos]:
+                p.append(cpos + 13)
+            if tk17[pos]:
+                p.append(cpos + 17)
+            if tk19[pos]:
+                p.append(cpos + 19)
+            if tk23[pos]:
+                p.append(cpos + 23)
+            if tk29[pos]:
+                p.append(cpos + 29)
             pos += 1
         # remove exceeding if present
         pos = len(p) - 1
