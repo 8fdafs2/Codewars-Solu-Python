@@ -1,14 +1,16 @@
 class Solution():
     """
     https://www.codewars.com/kata/57675f3dedc6f728ee000256
-    
-    Build Tower by given number of floors (integers and always greater than 0) and the block size (width, height)
+
+    Build Tower by given number of floors (integers and always greater than 0)
+    and the block size (width, height)
 
     Tower block unit is represented as '*'
 
     Have fun!
 
-    # for example, a tower of 3 floors with block size = (2, 3) looks like below
+    # for example, a tower of 3 floors with block size = (2, 3)
+    looks like below
     [
       ['  **  '],
       ['  **  '],
@@ -34,7 +36,8 @@ class Solution():
         for i in range(n_floors):
             n -= 1
             for j in range(h):
-                floors.append(' ' * n * w + '*' * (i * 2 + 1) * w + ' ' * n * w)
+                floors.append(' ' * n * w + '*' *
+                              (i * 2 + 1) * w + ' ' * n * w)
 
         return floors
 
