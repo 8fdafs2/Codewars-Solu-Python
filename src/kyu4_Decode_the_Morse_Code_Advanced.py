@@ -88,7 +88,7 @@ After you master this kata, you may try to Decode the Morse code, for real.
         from re import findall
         bits = bits.strip("0")
         m = len(sorted(findall("(1+|0+)", bits), key=len)[0])
-        return bits.replace('111' * m, '-').replace('000' * m, ' ').replace('1' * m, '.').replace('0' * m, '')
+        return decodeMorse(bits.replace('0000000' * m, ' ').replace('111' * m, '-').replace('000' * m, ' ').replace('1' * m, '.').replace('0' * m, ''))
 
     @staticmethod
     def decodeBits_03(bits):
@@ -97,7 +97,7 @@ After you master this kata, you may try to Decode the Morse code, for real.
         from re import split
         unit = min([len(s) for s in split(r'0+', bits.strip('0'))] +
                    [len(s) for s in split(r'1+', bits.strip('0')) if s != ''])
-        return bits.replace('0000000' * unit, '   ').replace('000' * unit, ' ').replace('111' * unit, '-').replace('1' * unit, '.').replace('0', '')
+        return decodeMorse(bits.replace('0000000' * unit, '   ').replace('000' * unit, ' ').replace('111' * unit, '-').replace('1' * unit, '.').replace('0', ''))
 
 
 def sets_gen(subsol):
